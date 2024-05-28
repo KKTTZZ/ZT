@@ -11,7 +11,7 @@ body, html {    margin: 0;
 }
 #loading-screen img {    width: 100px;
     height: 100px;}
-#main-screen {
+#main-screen, #settings-screen, #stats-screen, #channels-screen {
     display: flex;    flex-direction: column;
     justify-content: center;    align-items: center;
     height: 100%;
@@ -28,46 +28,50 @@ body, html {    margin: 0;
     right: 10px;
     font-size: 24px;    background-color: rgba(255, 255, 255, 0.8);
     padding: 5px 10px;    border-radius: 5px;
-    display: flex;    align-items: center;
 }
 #coin-counter {    font-weight: bold;
-    margin-right: 10px;}
-#sound-toggle {
-    width: 30px;    height: 30px;
+}
+#xp-bar {    position: absolute;
+    top: 10px;    left: 10px;
+    font-size: 24px;    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px 10px;    border-radius: 5px;
+    color: green;}
+#bottom-bar {
+    position: absolute;    bottom: 10px;
+    width: 100%;    display: flex;
+    justify-content: space-around;}
+.menu-icon {
+    width: 70px;    height: 70px;
     cursor: pointer;}
-#xp-bar {
-    position: absolute;    top: 10px;
-    left: 10px;    font-size: 24px;
-    background-color: rgba(255, 255, 255, 0.8);    padding: 5px 10px;
-    border-radius: 5px;    color: green;
-}
-#bottom-bar {    position: absolute;
-    bottom: 10px;    width: 100%;
-    display: flex;    justify-content: space-around;
-}
-.menu-icon {    width: 70px;
-    height: 70px;    cursor: pointer;
-}
-.coin-animation {    position: absolute;
-    font-size: 24px;
+.coin-animation {
+    position: absolute;    font-size: 24px;
     font-weight: bold;    color: gold;
-    top: 50%;
-    left: 10%;    transform: translateY(-50%);
-    animation: coinAnimation 1s forwards;}
-@keyframes coinAnimation {
-    0% {        opacity: 1;
-        transform: translateY(0);    }
-    100% {        opacity: 0;
-        transform: translateY(-50px);    }
+    top: 50%;    left: 10%;
+    transform: translateY(-50%);    animation: coinAnimation 1s forwards;
 }
-.xp-animation {    position: absolute;
-    font-size: 24px;    font-weight: bold;
-    color: green;    top: 50%;
-    right: 10%;    transform: translateY(-50%);
+@keyframes coinAnimation {    0% {
+        opacity: 1;        transform: translateY(0);
+    }    100% {
+        opacity: 0;        transform: translateY(-50px);
+    }}
+.xp-animation {
+    position: absolute;    font-size: 24px;
+    font-weight: bold;    color: green;
+    top: 50%;    right: 10%;
+    transform: translateY(-50%);
     animation: xpAnimation 1s forwards;}
-@keyframes xpAnimation {
-    0% {        opacity: 1;
-        transform: translateY(0);    }
-    100% {        opacity: 0;
-        transform: translateY(-50px);    }
+
+@keyframes xpAnimation {    0% {
+        opacity: 1;        transform: translateY(0);
+    }    100% {
+        opacity: 0;        transform: translateY(-50px);
+    }}
+#settings-screen, #stats-screen, #channels-screen {
+    display: none;}
+#channels-screen ul {
+    list-style: none;    padding: 0;
+}
+#channels-screen ul li {    margin: 10px 0;
+}
+#channels-screen button {    margin-left: 10px;
 }
